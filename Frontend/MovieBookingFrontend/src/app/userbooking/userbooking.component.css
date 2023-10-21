@@ -1,0 +1,42 @@
+.card{
+    
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    border: 2px solid #520852;
+    background-color: white;
+    
+    /* background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) */
+    /* no-repeat center; */
+    /* opacity: 0.6; */
+}
+input {
+    font-weight: 700;
+	font-size: 13px;
+    display: table-cell;
+    font-family: 'Joan',sans-serif;
+	text-transform: uppercase;
+	/* text-align:center; */
+}
+.error-message {
+    
+    color:red;
+    font-size: 12px;
+    margin-top: -8px;
+}
+.full-width{
+    width: 500px;
+}
+.content{
+    align-items: center;
+}
+.title{
+    text-align: center;
+}
+.close-button{
+    float: right;
+    top:-65px;
+    right:-20px;
+  }

@@ -1,0 +1,10 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .blue-color {
+    color:white;
+}
+mat-toolbar {
+  font-family: 'Joan', serif;
+}

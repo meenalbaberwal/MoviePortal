@@ -1,0 +1,115 @@
+<body>
+    
+    <div class="container">
+       
+         
+    <form #forget="ngForm" class="forgot" >
+       
+                <mat-card class="card">
+                    <mat-card-content class="content">
+                        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+                            <mat-icon class="close-icon" color="warn">close</mat-icon>
+                          </button>
+                        <h1 class="title">Forgot Password?</h1>
+                
+                    <!-- UserName -->
+                    <div>
+                    <mat-form-field class="full-width" appearance="outline">
+                       
+                        <mat-label>UserName</mat-label>
+                        <input name="username" [(ngModel)]="userreset.username" #username="ngModel"
+                         matInput placeholder="Enter Name" required/>
+                    </mat-form-field>
+                    <div class="error-message" *ngIf="(username.touched || forget.submitted) &&username.errors?.['required']">
+                        *Name is required
+                    </div>
+                </div><br>
+
+                    <div class="container text-center">
+                        <button type="submit" (click)="a()" mat-raised-button color="accent" id="forgot">Next</button>
+                    </div><br>
+                    
+                    <div class="container">
+                        <img src="../../assets/6333217.jpg" alt="" class="image">
+                    </div>
+                    
+                    
+               
+            </mat-card-content>
+            </mat-card>
+        </form>
+        <form id="reset" style="display:none" (ngSubmit)="reset()">
+            <mat-card class="card">
+                <mat-card-content class="content">
+                    <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+                        <mat-icon class="close-icon" color="warn">close</mat-icon>
+                      </button>
+                    <h1 class="title">Reset here!</h1>
+            
+                <!-- UserName -->
+                <mat-form-field class="full-width" appearance="outline">
+                       
+                    <mat-label>UserName</mat-label>
+                    <input name="username" [(ngModel)]="userreset.username"
+                         matInput readonly="readonly" required/>
+                </mat-form-field><br>
+                
+               
+                <div>
+                <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Security Question</mat-label>
+                <mat-select name="question" [(ngModel)]="userreset.question" #question="ngModel" required>
+                    <mat-option value="Pet Name?">Pet Name?</mat-option>
+                    <mat-option value="School Name?">School Name?</mat-option>
+                    <mat-option value="Fav Food?">Fav Food?</mat-option>
+                </mat-select>
+                </mat-form-field>
+                <div class="error-message" *ngIf="(question.touched) && question.errors?.['required']">
+                    *Select question type
+                </div>
+                </div><br>
+
+                <div>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Answer</mat-label>
+                    <input 
+                    name="answer" [(ngModel)]="userreset.answer" #answer="ngModel"
+                    type="text" matInput placeholder="Enter Answer" required/>
+                </mat-form-field>
+                <div class="error-message" *ngIf="(answer.touched) && answer.errors?.['required']">
+                    *Answer is required
+                </div>
+                </div><br>
+
+                <div>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>New Password</mat-label>
+                    <input 
+                    name="password" [(ngModel)]="userreset.password" #password="ngModel"
+                    type="password" matInput placeholder="Enter Password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"/>
+                </mat-form-field>
+                <div class="error-message" *ngIf="(password.touched) && password.errors?.['required']">
+                    *Password is required
+                </div>
+                <div
+                class="error-message"
+                *ngIf="password.touched && password.errors?.['pattern']">
+              *Please include at least 1 uppercase character, 1 lowercase character, and 1 number.
+              </div>
+                </div><br>
+                
+           
+                
+                <div class="container text-center">
+                    <button type="submit" mat-raised-button color="accent" >Reset</button>
+                </div><br>
+                <div class="container">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/004/616/147/small/safer-internet-day-free-vector.jpg" alt="" class="image1">
+                </div>
+        </mat-card-content>
+        </mat-card>
+
+        </form>
+        </div>
+        
+</body>

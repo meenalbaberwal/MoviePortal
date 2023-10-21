@@ -1,0 +1,51 @@
+<app-navbaruser></app-navbaruser>
+
+      <div class="container">
+        <p id="make-a">Welcome {{this.user}}!<br></p>
+        <mat-divider style="background-color: #AC3B61;"></mat-divider>
+ 
+        <form class=" box1">
+          <div class="search-div">
+            
+            <mat-form-field class="search-form-field" floatLabel="never">
+              <input matInput name="search" [(ngModel)]="this.searchQuery" placeholder="Search Movies" autocomplete="off" >
+              <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                <mat-icon class="mat-18">search</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+
+        <div class="current-movies">
+          <div id="searchInput" class="movie-card" *ngFor = "let movie of filteredMovies">
+            <div class="movie-header" >
+              <img class="im" src={{movie.imgurl}} alt="">
+            </div><!--movie-header-->
+            <div class="movie-content" >
+              <div class="movie-content-header">
+                  <h3 class="movie-title">{{movie.movieName}}</h3>
+                <button class="btn-logo" mat-raised-button color="accent" [disabled]="movie.seatsAvailable===0||movie.status==='Sold out'" (click)="book(movie)">Book</button>
+              </div>
+              <div class="movie-info">
+                <div class="info-section">
+                  <label>Theatre Name</label>
+                  <span>{{movie.theatreName}}</span>
+                </div><!--date,time-->
+                <div class="info-section">
+                  <label>Seats</label>
+                  <span>{{movie.seatsAvailable}}</span>
+                </div><!--screen-->
+                
+                <div class="info-section">
+                  <label>Status</label>
+                  <span>{{movie.status}}</span>
+                </div><!--seat-->
+              </div>
+            </div><!--movie-content-->
+          </div><!--movie-card-->
+        </div><!--container-->
+        <!-- </table> -->
+      </form>
+      </div>
+<div>
+</div>
+

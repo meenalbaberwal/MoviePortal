@@ -1,0 +1,74 @@
+<!-- <app-navbaradmin></app-navbaradmin> -->
+<body>
+    
+    <div class="container">
+    <form (ngSubmit)="addmovie()">
+                <mat-card class="card">
+                    <mat-card-content class="content">
+                        <h1 class="title">Add Movie Details</h1>
+                
+                    <!-- UserName -->
+                    <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+                        <mat-icon class="close-icon" color="warn">close</mat-icon>
+                      </button>
+                    <mat-form-field class="full-width" appearance="outline">
+                        
+                        <mat-label>Theatre Name</mat-label>
+                        <input name="theatreName" [(ngModel)]="movie.theatreName"
+                         matInput placeholder="Enter Theatre Name" required/>
+                    </mat-form-field><br>
+                    
+                    <!-- Email -->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Movie Name</mat-label>
+                        <input 
+                        name="movieName" [(ngModel)]="movie.movieName"
+                        matInput placeholder="Enter Movie Name" required/>
+                    </mat-form-field><br>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Seats</mat-label>
+                        <input 
+                        name="seats" [(ngModel)]="movie.seats"
+                        matInput placeholder="Enter Seats" required/>
+                    </mat-form-field><br>
+                    <!-- Contact -->
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Seats Available</mat-label>
+                        <input 
+                        name="seatsAvailble" [(ngModel)]="movie.seatsAvailable"
+                        matInput placeholder="Enter Seats Available" required/>
+                    </mat-form-field><br>
+
+                    <!-- <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Seats Booked</mat-label>
+                        <input 
+                        name="seatsBooked" [(ngModel)]="movie.seatsBooked"
+                        matInput placeholder="Enter Seats Booked" required/>
+                    </mat-form-field><br> -->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Movie Poster</mat-label>
+                        <input 
+                        name="seatsAvailble" [(ngModel)]="movie.imgurl"
+                        matInput placeholder="Enter Seats Available" required/>
+                    </mat-form-field><br>
+
+                <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Status</mat-label>
+                <mat-select name="status" [(ngModel)]="movie.status" required>
+                    <mat-option value="Book ASAP">Book ASAP</mat-option>
+                    <mat-option value="Sold out">Sold out</mat-option>
+                </mat-select>
+                </mat-form-field><br>
+                   
+                    <div class="container text-center">
+                        <button type="submit" mat-raised-button color="accent">Add Movie</button>
+                        <!-- <button type="reset" style="margin-left: 30px;" mat-raised-button color="accent">Clear form</button> -->
+                    </div>
+               
+            </mat-card-content>
+            </mat-card>
+        </form>
+        </div> 
+</body>

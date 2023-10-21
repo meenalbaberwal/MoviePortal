@@ -1,0 +1,61 @@
+<body>
+    <div class="container">
+        <div class="signin-signup">
+            <form action="" class="sign-in-form">
+                <h2 class="title">Welcome Cinephile!</h2>
+                <h4 style="font-family:'Joan',sans-serif ;">To keep connected with us and keep a track<br> with latest releases Sign in and enjoy binging!</h4>
+                <img src="../../assets/pngwing.com.png" class="image1">
+            </form>
+            <form #login="ngForm" class="sign-up-form">
+                <h2 class="title">Sign In</h2>
+                <div class="input-field">
+                    <mat-icon class="mat-18">account_circle</mat-icon>
+                    <input [(ngModel)]="user.username" 
+                    name="name" type="text" #name="ngModel" placeholder="Username" required/>
+                    <div class="error-message" *ngIf="(name.touched || login.submitted) &&name.errors?.['required']">
+                        *Username is empty
+                    </div>
+                </div>
+                <div class="input-field">
+                    <!-- <i class="fas fa-lock"></i> -->
+                    <mat-icon class="mat-18">vpn_key</mat-icon>
+                    <input [(ngModel)]="user.password" 
+                    name="password" #password="ngModel" type="password" placeholder="Password" required/>
+                    <div class="error-message" *ngIf="(password.touched || login.submitted) &&password.errors?.['required']">
+                        *Password is empty
+                    </div>
+                </div>
+                <!-- <p class="social-text"><a href="#" id="forgot">Forgot Password? Click here!</a></p> -->
+                <button class="e-link" (click)="forgetp()">Forgot Password?</button>
+                
+                    <!-- <a class="btn1" href="/src/app/admin-homepage/admin-homepage.component.html">Login</a> -->
+                    <button class="btn" (click)="onLogin()" >Login</button>
+                <a id="sign-in-btn">Back To Homepage</a>
+            </form>
+        </div>
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3 style="font-family:'Joan',sans-serif ;">Unsure about what to watch?</h3>
+                    <p>Don't worry we got your back!<br> Our website is dedicated to providing you with latest releases and a fantastic experience when it comes to movies<br>Still not the member of the Club?<br> Register fast by the below provided link!</p>
+                    <button class="btn" [routerLink]="['/registration']" >Register</button>
+                </div>
+            </div>
+            <div class="panel right-panel" >
+                <div class="content">
+                    <h2 style="font-family:'Joan',sans-serif ;">Your watchlist is waiting for you...Sign In below!</h2>
+                    <button class="btn" (click)="a()" id="sign-up-btn">Sign In</button>     
+                </div>
+                <div class="container1">
+                    <!-- <img src="../../assets/cam.png" alt="" class="image"> -->
+                <!-- <img src="https://img.freepik.com/premium-vector/online-cinema-mobile-movie-theater-cinematography-tiny-people-watching-movie-with-popcorn_501813-320.jpg?w=360" alt="" class="image"> -->
+                <img src="../../assets/marvel.png" class="image">
+                <!-- <img src="https://png.pngtree.com/png-clipart/20190925/ourmid/pngtree-couple-watching-movie-girlfriends-illustration-png-image_1742563.jpg" alt="" class="image"> -->
+            </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <span>&#169; Meenal Baberwal 2023</span> 
+    </footer>
+</body>

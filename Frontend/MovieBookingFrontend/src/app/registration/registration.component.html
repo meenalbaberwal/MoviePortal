@@ -1,0 +1,167 @@
+<app-navbar></app-navbar>
+<body>
+    
+        <div class="container">
+        <form #registerForm="ngForm" id="frm" (ngSubmit)="onRegister()">
+                    <mat-card class="card">
+                        <mat-card-content class="content">
+                            <h1 class="title">Registration Portal</h1>
+                            <img src="https://media.istockphoto.com/id/1168018817/vector/open-air-cinema-concept-vector-illustration.jpg?s=612x612&w=0&k=20&c=WI3jTvLeRjoqmFE2ik25r0tVI-Yw4Bvj63IDeL6FzrI="><br>
+                    
+                        <!-- UserName -->
+                        <div>
+                        <mat-form-field class="full-width" appearance="outline">
+                            
+                            <mat-label>UserName</mat-label>
+                            <input name="username" [(ngModel)]="user.username"
+                             matInput placeholder="Enter Name" #username="ngModel" required/>
+                            
+                        </mat-form-field>
+                        <div class="error-message" *ngIf="(username.touched || registerForm.submitted) &&username.errors?.['required']">
+                            *Name is required
+                        </div>
+                    </div><br>
+                        
+                        <!-- Password -->
+                        
+                        <!-- Email -->
+                        <div>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Email ID</mat-label>
+                            <input 
+                            name="email" [(ngModel)]="user.email" #email="ngModel"
+                            type="email" matInput placeholder="Placeholder" required email/>
+                            
+                        </mat-form-field>
+                        <div class="error-message"
+                            *ngIf="(email.touched || registerForm.submitted) && email.errors?.['required']">
+                            *Email is required
+                    </div>
+                          <div
+                            class="error-message"
+                            *ngIf="email.touched && email.errors?.['email']">
+                            *Enter a valid email address with @ symbol included
+                        </div>
+                        </div><br>
+    
+                        <!-- Contact -->
+                        <div>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Contact No.</mat-label>
+                            <input  name="mobileno" [(ngModel)]="user.mobileno" #mobileno="ngModel"
+                            type="tel" matInput placeholder="Enter Contact" 
+                             minlength="10" maxlength="10" required  pattern="^(?=.*[7-9]{1}).*$"/>
+                        </mat-form-field>
+                        
+                        <div class="error-message"
+                        *ngIf="(mobileno.touched || registerForm.submitted) && mobileno.errors?.['required']">
+                        *Please enter Contact details
+                        </div>
+                      <!-- <div
+                        class="error-message"
+                        *ngIf="mobileno.touched || mobileno.errors?.['pattern']">
+                        *Enter a valid contact number with 10 digit number starting with 7,8 or 9.
+                      </div> -->
+                        </div><br>
+
+
+                        <div>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input 
+                            name="password" [(ngModel)]="user.password" #password="ngModel"
+                            type="password" matInput placeholder="Enter Password" 
+                            title="" 
+                            required  pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"/>
+                            
+                        </mat-form-field>
+                        <div
+                        class="error-message"
+                        *ngIf="(password.touched || registerForm.submitted) && password.errors?.['required']">
+                        *Password is required
+                    </div>
+                      <div
+                        class="error-message"
+                        *ngIf="password.touched && password.errors?.['pattern']">
+                      *Please include at least 1 uppercase character, 1 lowercase character, and 1 number.
+                      </div>
+                    </div><br>
+
+                    <div>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Confirm Password</mat-label>
+                            <input 
+                            name="confirmPassword" [(ngModel)]="user.confirmpass" #confirmPassword="ngModel"
+                            type="password" matInput placeholder="Enter Password" confirmpass="password" required />
+                           
+                        </mat-form-field>
+                        <div
+                        class="error-message"
+                        *ngIf="
+                          (confirmPassword.touched || registerForm.submitted) &&
+                          confirmPassword.errors?.['required']
+                        "
+                      >
+                        *Password Confirmation is required
+                      </div>
+                      <div
+                        class="error-message"
+                        *ngIf="
+                          confirmPassword.touched &&
+                          confirmPassword.value!==password.value">
+                        *Password does not match
+                      </div>
+                    
+                    </div><br>
+
+
+
+                        <div>
+                        <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Security Question</mat-label>
+                        <mat-select name="question" [(ngModel)]="user.question" #question="ngModel" required>
+                            <mat-option value="Pet Name?">Pet Name?</mat-option>
+                            <mat-option value="School Name?">School Name?</mat-option>
+                            <mat-option value="Fav Food?">Fav Food?</mat-option>
+                        </mat-select>
+                        </mat-form-field>
+                        <div class="error-message" *ngIf="(question.touched || registerForm.submitted) &&question.errors?.['required']">
+                            *Select question type
+                        </div>
+                    </div><br>
+
+
+
+                        <div>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Answer</mat-label>
+                            <input 
+                            name="answer" [(ngModel)]="user.answer" #answer="ngModel"
+                            type="text" matInput placeholder="Enter Answer" required/>
+                        </mat-form-field>
+                        <div class="error-message" *ngIf="(answer.touched || registerForm.submitted) &&answer.errors?.['required']">
+                            *Answer is required
+                        </div>
+                    </div>
+                        <br>
+                        <div class="container1 text-center">
+                            <button type="submit" class="btn btn-success" mat-raised-button >Register</button>
+                            <button type="reset" class="btn btn-danger" style="margin-left: 30px;" mat-raised-button (click)="reset()">Clear</button>
+                        </div>
+                   
+                </mat-card-content>
+                </mat-card>
+            </form>
+            </div> 
+            </body>
+
+
+
+
+
+
+
+
+
+              

@@ -1,0 +1,58 @@
+
+.card{
+    
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    border: 2px solid #520852;
+    background-color: rgba(255, 255, 255, 0.5);
+
+    
+   
+    /* opacity: 0.6; */
+}
+.full-width{
+    width: 500px;
+}
+.content{
+    align-items: center;
+}
+.title{
+    text-align: center;
+    font-family:'Joan',sans-serif ;
+}
+img {
+    height: 250px;
+    width: 600px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+    /* position: absolute; */
+}
+.error-message {
+    
+    color:red;
+    font-size: 12px;
+    margin-top: -8px;
+}
+mat-form-field {
+    margin-bottom: -10px;
+}
+.container {
+    /* background: url(https://media.istockphoto.com/id/1168018817/vector/open-air-cinema-concept-vector-illustration.jpg?s=612x612&w=0&k=20&c=WI3jTvLeRjoqmFE2ik25r0tVI-Yw4Bvj63IDeL6FzrI=); */
+
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    /* margin: 0; */
+
+	height: 800px;
+	width: 1700px;
+	display: block;
+	
+
+  
+}
